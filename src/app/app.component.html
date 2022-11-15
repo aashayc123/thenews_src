@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="container">
+    <nav class="navbar navbar-light bg-light rounded">
+        <div class="nav navbar">
+          <a class="navbar-brand fs-4 text-white bg-primary px-2" href="#">The news</a>
+          <button type="button" class="nav-item nav-link btn text-secondary" *ngFor="let category of categories" (click)="onSelect(category)" 
+          [class]="{'text-dark': category === selectedCategory, 'fw-semibold': category === selectedCategory}" >{{category|titlecase}}</button>
+        </div>
+    </nav>
+    <div class="d-flex justify-content-center">
+      <div class="card mt-2 mb-3 text-center col-sm-8">        
+        <div class="card-body text-bg-info" style="font-size: 15px;">
+         This is a website for news(probably some months old now)  for India built on this <a class="text-light" href="https://saurav.tech/NewsAPI/">NewsAPI</a> 
+         with Angular and Bootstrap by <a class="text-light" href="https://in.linkedin.com/in/aashay-chandewar-73b2b978">Aashay Chandewar</a>. View the source code here - <a class="text-light" href="https://github.com/aashayc123/thenews_src">(Github)</a> @2022.
+        </div>
+      </div>
+    </div>    
+    <app-news-section [category]="selectedCategory"></app-news-section>
+  </div>    
+</div>
